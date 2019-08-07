@@ -25,7 +25,7 @@ def convert_to_img(train=True):
         for i,(img,label) in enumerate(zip(train_set[0],train_set[1])):
             img_path = data_path + str(i) + '.jpg'
             io.imsave(img_path,img.numpy())
-            f.write(img_path + ' ' + str(label) + '\n')
+            f.write(img_path + ' ' + str(label.numpy()) + '\n')
         f.close()
     else:
         f = open(root + 'test.txt','w')
@@ -35,7 +35,7 @@ def convert_to_img(train=True):
         for i,(img,label) in enumerate(zip(test_set[0],test_set[1])):
             img_path = data_path + str(i) + '.jpg'
             io.imsave(img_path,img.numpy())
-            f.write(img_path + ' ' + str(label) + '\n')
+            f.write(img_path + ' ' + str(label.numpy()) + '\n')
         f.close()
 
 convert_to_img(True)
